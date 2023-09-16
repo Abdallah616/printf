@@ -18,13 +18,13 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-		if (format[i] == '\0')
-			return (-1);
-		printed_chars += get_specifier(format[i], args);
+			if (format[i] == '\0')
+				return (-1);
+			printed_chars += get_specifier(format[i], args);
 		}
 		else
 		{
-			write(1, &format[i], 1);
+			write(1, "", 1);
 			printed_chars++;
 		}
 	}
