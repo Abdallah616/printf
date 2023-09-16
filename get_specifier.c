@@ -38,8 +38,7 @@ int get_specifier(char specifier, va_list args)
 			printed_chars += print_uint(unum);
 			break;
 		default:
-			write(1, "%", 1);
-			printed_chars++;
+			write(1, "", 1);
 			break;
 	}
 
