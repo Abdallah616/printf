@@ -6,6 +6,8 @@
 #include <unistd.h>
 #include <stdarg.h>
 
+#define LOCAL_BUFFER 1024
+
 int _printf(const char *format, ...);
 int print_int(int num);
 int print_char(char c);
