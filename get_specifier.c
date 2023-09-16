@@ -35,7 +35,7 @@ int get_specifier(char specifier, va_list args)
 			break;
 		case 'u':
 			unum = va_arg(args, unsigned int);
-			printed_chars += print_unsigned(unum);
+			printed_chars += print_uint(unum);
 			break;
 		default:
 			write(1, "%", 1);
