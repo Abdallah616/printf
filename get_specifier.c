@@ -7,7 +7,7 @@
  * @args: The va_list of arguments
  * Return: Always The number of characters printed
  */
-int get_specifier(char specifier, va_list args);
+int get_specifier(char specifier, va_list args)
 {
 	int printed_chars = 0;
 	char *str;
