@@ -11,6 +11,8 @@ int print_int(int num);
 int print_char(char c);
 int print_str(const char *str);
 int print_percent(void);
-int handle_specifier(char specifier, va_list args);
+int print_uint(unsigned int num);
+int print_octal(unsigned int num);
+int get_specifier(char specifier, va_list args);
 
 #endif
