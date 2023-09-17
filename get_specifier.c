@@ -42,13 +42,17 @@ int get_specifier(char specifier, va_list args)
 			printed_chars += print_octal(unum);
 		break;
 		case 'x':
-        		unum = va_arg(args, unsigned int);
+			unum = va_arg(args, unsigned int);
 			printed_chars += print_hex_lower(unum);
 			break;
 		case 'X':
 			unum = va_arg(args, unsigned int);
 			printed_chars += print_hex_upper(unum);
 			break;
+		case 'b':
+			unum = va_arg(args, unsigned int);
+			printed_chars += print_binary(unum);
+			 break;
 		default:
 			break;
 	}
