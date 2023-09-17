@@ -37,8 +37,19 @@ int get_specifier(char specifier, va_list args)
 			unum = va_arg(args, unsigned int);
 			printed_chars += print_uint(unum);
 			break;
+		case 'o':
+			unum = va_arg(args, unsigned int);
+			printed_chars += print_octal(unum);
+		break;
+		case 'x':
+        		unum = va_arg(args, unsigned int);
+			printed_chars += print_hex_lower(unum);
+			break;
+		case 'X':
+			unum = va_arg(args, unsigned int);
+			printed_chars += print_hex_upper(unum);
+			break;
 		default:
-			write(1, "", 1);
 			break;
 	}
 
