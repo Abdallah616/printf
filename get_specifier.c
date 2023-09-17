@@ -10,9 +10,9 @@
 int get_specifier(char specifier, va_list args)
 {
 	int printed_chars = 0;
-	char *str;
+	char *str, *binary = (char *)malloc(32 * sizeof(char));
 	int num;
-	unsigned int unum;
+	unsigned int unum, temp;
 
 	switch (specifier)
 	{
@@ -40,18 +40,9 @@ int get_specifier(char specifier, va_list args)
 		case 'o':
 			unum = va_arg(args, unsigned int);
 			printed_chars += print_octal(unum);
-		break;
-		case 'x':
-        		unum = va_arg(args, unsigned int);
-			printed_chars += print_hex_lower(unum);
-			break;
-		case 'X':
-			unum = va_arg(args, unsigned int);
-			printed_chars += print_hex_upper(unum);
 			break;
 		default:
 			break;
 	}
-
 	return (printed_chars);
 }
