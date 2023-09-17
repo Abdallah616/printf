@@ -18,6 +18,6 @@ int print_octal(unsigned int num);
 int get_specifier(char specifier, va_list args);
 int print_hex_lower(unsigned int u_num);
 int print_hex_upper(unsigned int u_num);
-void IntToBinary(unsigned int num, char *binary);
+int print_binary(unsigned int num);
 
 #endif
