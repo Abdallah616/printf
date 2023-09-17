@@ -9,36 +9,26 @@
 */
 int print_binary(unsigned int num)
 {
-	int num_len = 0, i, leadingzeros = 0;
-	unsigned int temp = num;
-	char *bin_str;
+	int len = 0, i, printed_chars = 0;
+	char *buffer = (char *)malloc(LOCAL_BUFFER);
+	unsigned int temp;
 
+	temp = num;
 	if (num == 0)
 	{
-		write(1, "0", 1);
-		return (1);
-	}
-	while (temp != 0)
+		buffer[len++] = '0';
+	} else
 	{
-		temp /= 2;
-		num_len++;
+		while (temp != 0)
+		{
+			buffer[len++] = (temp % 2) + '0';
+			temp /= 2;
+		}
 	}
-	bin_str = (char *)malloc(sizeof(unsigned int));
-	if (bin_str == NULL)
-		exit(0);
-	temp = num;
-	for (i = num_len - 1; i >= 0; i--)
+	for (i = len - 1; i >= 0; i--)
 	{
-		bin_str[i] = (temp % 2) + '0';
-		temp /= 2;
+		write(1, &buffer[i], 1);
+		printed_chars++;
 	}
-	for (i = 0; i < num_len; i++)
-	{
-		if (bin_str[i] == '0')
-			leadingzeros++;
-		else
-			break;
-	}
-	write(1, bin_str + leadingzeros, num_len - leadingzeros);
-	return (num_len - leadingzeros);
+	return (printed_chars);
 }
