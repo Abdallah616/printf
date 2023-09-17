@@ -52,7 +52,7 @@ int get_specifier(char specifier, va_list args)
 		case 'b':
 			unum = va_arg(args, unsigned int);
 			printed_chars += print_binary(unum);
-			 break;
+			break;
 		default:
 			break;
 	}
