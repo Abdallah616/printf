@@ -10,9 +10,9 @@
 int get_specifier(char specifier, va_list args)
 {
 	int printed_chars = 0;
-	char *str, = (char *)malloc(32 * sizeof(char));
+	char *str;
 	int num;
-	unsigned int unum,
+	unsigned int unum;
 
 	switch (specifier)
 	{
