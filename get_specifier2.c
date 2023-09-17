@@ -10,6 +10,7 @@ int get2_specifier(char specifier, va_list args)
 {
 	int printed_chars = 0;
 	unsigned int unum;
+	char *str, per = '%';
 
 	switch (specifier)
 	{
@@ -20,7 +21,14 @@ int get2_specifier(char specifier, va_list args)
 			unum = va_arg(args, unsigned int);
 			printed_chars += print_binary(unum);
 			break;
+		case 'R':
+			str = va_arg(args, char *);
+			printed_chars += print_rot13(str);
+			break;
 		default:
+			write(1, &per, 1);
+			write(1, &specifier, 1);
+			printed_chars++;
 			break;
 	}
 	return (printed_chars);

@@ -48,6 +48,7 @@ int get_specifier(char specifier, va_list args)
 			printed_chars += print_hex_upper(unum);
 			break;
 		default:
+			printed_chars += get2_specifier(specifier, args);
 			break;
 	}
 	return (printed_chars);
