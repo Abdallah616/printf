@@ -7,6 +7,7 @@
  * @args: The va_list of arguments
  * Return: Always The number of characters printed
  */
+int get_specifier(char specifier, va_list args);
 int get_specifier(char specifier, va_list args)
 {
 	int printed_chars = 0;
@@ -25,9 +26,6 @@ int get_specifier(char specifier, va_list args)
 				str = "(null)";
 			printed_chars += print_str(str);
 			break;
-		case '%':
-			printed_chars += print_percent();
-			break;
 		case 'd':
 		case 'i':
 			num = va_arg(args, int);
@@ -40,7 +38,7 @@ int get_specifier(char specifier, va_list args)
 		case 'o':
 			unum = va_arg(args, unsigned int);
 			printed_chars += print_octal(unum);
-		break;
+			break;
 		case 'x':
 			unum = va_arg(args, unsigned int);
 			printed_chars += print_hex_lower(unum);
@@ -48,10 +46,6 @@ int get_specifier(char specifier, va_list args)
 		case 'X':
 			unum = va_arg(args, unsigned int);
 			printed_chars += print_hex_upper(unum);
-			break;
-		case 'b':
-			unum = va_arg(args, unsigned int);
-			printed_chars += print_binary(unum);
 			break;
 		default:
 			break;

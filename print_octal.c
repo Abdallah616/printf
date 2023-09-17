@@ -32,5 +32,5 @@ int print_octal(unsigned int num)
 		temp /= 8;
 	}
 	write(1, num_str, num_len);
-	return num_len;
+	return (num_len);
 }
