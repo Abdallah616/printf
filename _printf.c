@@ -22,7 +22,7 @@ int _printf(const char *format, ...)
 				return (-1);
 			printed_chars += get_specifier(format[i], args);
 			if (printed_chars == 0)
-				printed_chars += get_specifier2(format[i], args);
+				printed_chars += get2_specifier(format[i], args);
 		}
 		else
 		{
