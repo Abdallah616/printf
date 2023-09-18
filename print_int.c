@@ -17,7 +17,11 @@ int print_int(int num)
 		return (1);
 	}
 	if (num < 0)
-		num_len++, temp = -num;
+	{
+		write(1, "-", 1);
+		num_len++;
+		temp = -num;
+	}
 	while (temp != 0)
 	{
 		temp /= 10;
@@ -28,21 +32,11 @@ int print_int(int num)
 		exit(0);
 	temp = num;
 	if (num < 0)
-	{
 		temp = -num;
-		for (i = num_len - 1; i > 0; i--)
-		{
-			num_str[i] = temp % 10 + '0';
-			temp /= 10;
-		}
-		num_str[0] = '-';
-	} else
+	for (i = num_len - 2; i >= 0; i--)
 	{
-		for (i = num_len - 1; i >= 0; i--)
-		{
-			num_str[i] = temp % 10 + '0';
-			temp /= 10;
-		}
+		num_str[i] = temp % 10 + '0';
+		temp /= 10;
 	}
 	write(1, num_str, num_len);
 	return (num_len);
