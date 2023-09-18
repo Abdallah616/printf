@@ -27,16 +27,18 @@ int print_int(int num)
 		temp /= 10;
 		num_len++;
 	}
-	num_str = (char *)malloc(sizeof(int));
+	num_str = (char *)malloc(num_len * sizeof(char));
 	if (num_str == NULL)
 		exit(0);
 	temp = num;
 	if (num < 0)
 		temp = -num;
-	for (i = num_len - 2; i >= 0; i--)
+	for (i = num_len - 1; i >= 0; i--)
 	{
 		num_str[i] = temp % 10 + '0';
 		temp /= 10;
+		if (temp == 0)
+			break;
 	}
 	write(1, num_str, num_len);
 	return (num_len);
