@@ -7,11 +7,10 @@
  *
  * Return: length of printed num
 */
-int print_binary(unsigned int num)
+int print_binary(int num)
 {
-	int len = 0, i, printed_chars = 0;
+	int len = 0, i, printed_chars = 0, temp;
 	char *buffer = (char *)malloc(LOCAL_BUFFER);
-	unsigned int temp;
 
 	temp = num;
 	if (num == 0)
