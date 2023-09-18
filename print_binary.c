@@ -9,8 +9,9 @@
 */
 int print_binary(unsigned int num)
 {
-	int len = 0, i, printed_chars = 0, temp;
+	int len = 0, i, printed_chars = 0;
 	char *buffer = (char *)malloc(LOCAL_BUFFER);
+	unsigned int temp;
 
 	temp = num;
 	if (num == 0)
