@@ -6,8 +6,11 @@
  *
  * Return: The number of characters printed
  */
-int print_char(char c)
+int print_char(va_list ptr)
 {
-	write(1, &c, 1);
+	char ch = va_arg(ptr, int);
+	if (ch == '\0')
+		return (0);
+	_putchar(ch);
 	return (1);
 }

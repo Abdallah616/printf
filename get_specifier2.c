@@ -16,7 +16,7 @@ int get2_specifier(char specifier, va_list args)
 	switch (specifier)
 	{
 		case 'c':
-			printed_chars += print_char(va_arg(args, int));
+			printed_chars += print_char(args);
 			break;
 		case '%':
 			printed_chars += print_percent();
