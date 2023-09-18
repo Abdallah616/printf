@@ -10,7 +10,7 @@
 
 int _printf(const char *format, ...);
 int print_int(int num);
-int print_char(va_list ptr);
+int print_char(char c);
 int print_str(const char *str);
 int print_percent(void);
 int print_uint(unsigned int num);
