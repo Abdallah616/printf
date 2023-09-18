@@ -24,5 +24,6 @@ int print_rot13(char *str);
 int print_reverse(char *str);
 int print_address(void *ptr);
 int _putchar(char c);
+int print_custom_str(char *sptr);
 
 #endif

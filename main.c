@@ -45,5 +45,6 @@ int main(void)
 	_printf("%R\n", "abcdef");
 	_printf("%b\n", -98);
 	_printf("%r\n", "issem");
+	_printf("%S\n", "Best\nSchool");
 	return (0);
 }

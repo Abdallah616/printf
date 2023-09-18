@@ -2,7 +2,7 @@
 
 /**
  * print_char - Print a character
- * @ptr: The list of arguments
+ * @c: char to be printed.
  *
  * Return: The number of characters printed
  */
