@@ -11,6 +11,7 @@ int get2_specifier(char specifier, va_list args)
 	int printed_chars = 0;
 	unsigned int unum;
 	char *str, per = '%';
+	void *ptr;
 
 	switch (specifier)
 	{
@@ -33,7 +34,10 @@ int get2_specifier(char specifier, va_list args)
 				str = "";
 			printed_chars += print_reverse(str);
 			break;
-
+		case 'p':
+			ptr = va_arg(args, void *);
+			printed_chars += print_address(ptr);
+			break;
 		default:
 			write(1, &per, 1);
 			write(1, &specifier, 1);

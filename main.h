@@ -22,6 +22,6 @@ int print_binary(unsigned int num);
 int get2_specifier(char specifier, va_list args);
 int print_rot13(char *str);
 int print_reverse(char *str);
-
+int print_address(void *ptr);
 
 #endif
