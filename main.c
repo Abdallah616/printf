@@ -41,8 +41,8 @@ int main(void)
 	printf("Len:[%d]\n", len2);
 	_printf("Unknown:[%w]\n");
 	printf("Unknown:[%w]\n");
-	_printf("%R", "abcdef");
-	_printf("%b\n", 500);
+	_printf("%R\n", "abcdef");
+	_printf("%b\n", -98);
 	_printf("%r\n", "issem");
 	return (0);
 }
