@@ -8,7 +8,8 @@
  */
 int get2_specifier(char specifier, va_list args)
 {
-	int printed_chars = 0, num;
+	int printed_chars = 0;
+	unsigned int unum;
 	char *str, per = '%';
 
 	switch (specifier)
@@ -17,8 +18,8 @@ int get2_specifier(char specifier, va_list args)
 			printed_chars += print_percent();
 			break;
 		case 'b':
-			num = va_arg(args, int);
-			printed_chars += print_binary(num);
+			unum = va_arg(args, unsigned int);
+			printed_chars += print_binary(unum);
 			break;
 		case 'R':
 			str = va_arg(args, char *);
