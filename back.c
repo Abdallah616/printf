@@ -6,7 +6,7 @@
  *
  * Return: length of num
 */
-int print_int(int num)
+int print1_int(int num)
 {
         int temp = num, num_len = 0, i;
         char *num_str;
