@@ -7,7 +7,6 @@
  * @args: The va_list of arguments
  * Return: Always The number of characters printed
  */
-int get_specifier(char specifier, va_list args);
 int get_specifier(char specifier, va_list args)
 {
 	int printed_chars = 0;
@@ -17,9 +16,6 @@ int get_specifier(char specifier, va_list args)
 
 	switch (specifier)
 	{
-		case 'c':
-			printed_chars += print_char(va_arg(args, int));
-			break;
 		case 's':
 			str = va_arg(args, char *);
 			if (!str)
