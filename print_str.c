@@ -12,7 +12,7 @@ int print_str(const char *str)
 
 	while (str[i])
 	{
-		write(1, &str[i], 1);
+		_putchar(str[i]);
 		i++;
 	}
 
