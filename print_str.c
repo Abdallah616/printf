@@ -9,13 +9,13 @@
 int print_str(va_list arg)
 {
 	int i = 0;
-	char *str, *p = "(null)";;
+	char *str, *p = "(null)";
 
 	str = va_arg(arg, char *);
 	if (str == NULL)
 	{
 		write(1, p, 6);
-		return(6);
+		return (6);
 	}
 	while (str[i] != '\0')
 	{
@@ -25,7 +25,7 @@ int print_str(va_list arg)
 	return (i);
 }
 /**
- * print_str - Print a string
+ * print_str1 - Print a string
  * @str: The string to print
  *
  * Return: The number of characters printed
