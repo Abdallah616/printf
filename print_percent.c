@@ -3,7 +3,6 @@
 /**
  * print_percent - Print a percent sign
  *
- * @arg: list of arguments
  *
  * Return: The number of characters printed
  */
