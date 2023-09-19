@@ -31,7 +31,7 @@ int main(void)
 	printf("Unsigned octal:[%o]\n", ui);
 	_printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
 	printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
-	_printf("Character:[%c]\n", ' ');++
+	_printf("Character:[%c]\n", ' ');
 	printf("Character:[%c]\n", 'H');++
 	_printf("String:[%s]\n", NULL);++
 	printf("String:[%s]\n", "I am a string !");++
