@@ -4,31 +4,32 @@
  * print_binary - print num in binary
  *
  * @num: num to be printed
+ * @numbits: num of bits in buffer
  *
  * Return: length of printed num
 */
-int print_binary(int num)
+int print_binary(unsigned int num, int numbits)
 {
-	int len = 0, i, printed_chars = 0;
-	char *buffer = (char *)malloc(LOCAL_BUFFER);
-	unsigned int temp;
+	int i, printed_chars = 0, firstnonzero = 0;
+	char *buffer = (char *)malloc(numbits + 1);
 
-	temp = num;
-	if (num == 0)
-		buffer[len++] = '0';
-	else
+	if (!buffer)
+		exit(0);
+	buffer[numbits] = '\0';
+	for (i = numbits - 1; i >= 0; i--)
 	{
-		while (temp != 0)
+		buffer[i] = (num & 1) ? '1' : '0';
+		printed_chars++;
+		num >>= 1;
+	}
+	for (i = 0; i < printed_chars; i++)
+	{
+		if (buffer[i] != '0')
 		{
-			buffer[len++] = (temp % 2) + '0';
-			temp /= 2;
+			firstnonzero = i;
+			break;
 		}
 	}
-	temp = num;
-	for (i = len - 1; i >= 0; i--)
-	{
-		write(1, &buffer[i], 1);
-		printed_chars++;
-	}
-	return (printed_chars);
+	write(1, buffer + firstnonzero, numbits - firstnonzero);
+	return (printed_chars - firstnonzero);
 }

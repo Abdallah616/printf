@@ -8,7 +8,7 @@
  */
 int get2_specifier(char specifier, va_list args)
 {
-	int printed_chars = 0;
+	int printed_chars = 0, numbits = sizeof(int) * 8;
 	unsigned int unum;
 	char *str, per = '%';
 	void *ptr;
@@ -23,7 +23,7 @@ int get2_specifier(char specifier, va_list args)
 			break;
 		case 'b':
 			unum = va_arg(args, unsigned int);
-			printed_chars += print_binary(unum);
+			printed_chars += print_binary(unum, numbits);
 			break;
 		case 'R':
 			str = va_arg(args, char *);

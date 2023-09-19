@@ -33,7 +33,7 @@ int main(void)
 	printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
 	_printf("Character:[%c]\n", 'l');
 	printf("Character:[%c]\n", 'H');
-	_printf("String:[%s]\n", "");
+	_printf("String:[%s]\n", "I am a string !\\free");
 	printf("String:[%s]\n", "I am a string !");
 	_printf("%b\n", 98);
 	len = _printf("Percent:[%%]\n");
@@ -41,7 +41,6 @@ int main(void)
 	_printf("Len:[%d]\n", len);
 	printf("Len:[%d]\n", len2);
 	_printf("Unknown:[%w]\n");
-	printf("Unknown:[%w]\n");
 	_printf("%R\n", "abcdef");
 	_printf("%b\n", -98);
 	_printf("%r\n", "issem");
