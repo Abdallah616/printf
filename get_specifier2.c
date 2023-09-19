@@ -25,7 +25,7 @@ int get2_specifier(char specifier, va_list args)
 		case 'b':
 			unum = va_arg(args, unsigned int);
 			binary = convert_to_binary(unum);
-			printed_chars += print_str(binary);
+			printed_chars += print_str1(binary);
 			free(binary);
 			break;
 		case 'R':

@@ -22,10 +22,7 @@ int get_specifier(char specifier, va_list args)
 			printed_chars += print_custom_str(str);
 			break;
 		case 's':
-			str = va_arg(args, char *);
-			if (!str)
-				str = "(null)";
-			printed_chars += print_str(str);
+			printed_chars += print_str(args);
 			break;
 		case 'd':
 		case 'i':
