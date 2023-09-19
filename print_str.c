@@ -6,7 +6,7 @@
  *
  * Return: The number of characters printed
  */
-int print_str(const char *str)
+int print_str(char *str)
 {
 	int len;
 
