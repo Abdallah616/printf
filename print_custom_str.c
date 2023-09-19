@@ -9,17 +9,19 @@
 int print_custom_str(char *sptr)
 {
 	int i = 0, printed_chars = 0;
-	char *hex_buff = (char *)malloc(4 * sizeof(char));
+	char *hex_buff = (char *)malloc(2 * sizeof(char));
 
+	if (hex_buff == NULL)
+		exit(0);
 	while (sptr[i])
 	{
 		if (sptr[i] < 32 || sptr[i] >= 127)
 		{
-			hex_buff[0] = '\\';
-			hex_buff[1] = 'x';
-			hex_buff[2] = (sptr[i] / 16) + ((sptr[i] / 16 <= 9) ? '0' : 'A' - 10);
-			hex_buff[3] = (sptr[i] % 16) + ((sptr[i] % 16 <= 9) ? '0' : 'A' - 10);
-			write(1, hex_buff, 4);
+			write(1, "\\x", 2);
+			hex_buff[0] = (sptr[i] / 16) + ((sptr[i] / 16 <= 9) ? '0' : 'A' - 10);
+			hex_buff[1] = (sptr[i] % 16) + ((sptr[i] % 16 <= 9) ? '0' : 'A' - 10);
+			write(1, hex_buff, 2);
+			printed_chars += 2;
 		}
 		else
 		{
