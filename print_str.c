@@ -13,8 +13,8 @@ int print_str(char *str)
 
 	len = _strlen(str);
 	buffer = (char *)malloc(len * sizeof(char) + 1);
-	if (buffer == NULL)
-		exit(0);
+	if (!buffer)
+		return (NULL);
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		buffer[i] = str[i];
