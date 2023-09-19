@@ -6,11 +6,12 @@
  * @args: The va_list of arguments
  * Return: Always The number of characters printed
  */
+int get2_specifier(char specifier, va_list args);
 int get2_specifier(char specifier, va_list args)
 {
-	int printed_chars = 0, numbits = sizeof(int) * 8;
+	int printed_chars = 0;
 	unsigned int unum;
-	char *str, per = '%';
+	char *str, per = '%', *binary;
 	void *ptr;
 
 	switch (specifier)
@@ -23,7 +24,9 @@ int get2_specifier(char specifier, va_list args)
 			break;
 		case 'b':
 			unum = va_arg(args, unsigned int);
-			printed_chars += print_binary(unum, numbits);
+			binary = convert_to_binary(unum);
+			printed_chars += print_str(binary);
+			free(binary);
 			break;
 		case 'R':
 			str = va_arg(args, char *);
