@@ -7,9 +7,8 @@
  *
  * Return: The number of characters printed
  */
-int print_percent(va_list arg)
+int print_percent(void)
 {
-	if (va_arg(arg, int))
-		_putchar(37);
+	_putchar(37);
 	return (1);
 }
