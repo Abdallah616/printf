@@ -20,7 +20,7 @@ int get2_specifier(char specifier, va_list args)
 			printed_chars += print_char(va_arg(args, int));
 			break;
 		case '%':
-			printed_chars += print_percent();
+			printed_chars += print_percent(args);
 			break;
 		case 'b':
 			unum = va_arg(args, unsigned int);
