@@ -26,5 +26,6 @@ int print_address(void *ptr);
 int _putchar(char c);
 int print_custom_str(char *sptr);
 char *convert_to_binary(unsigned int unum);
+int _strlen(char *s);
 
 #endif
