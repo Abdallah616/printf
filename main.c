@@ -45,5 +45,7 @@ int main(void)
 	_printf("%R\n", "abcdef");
 	_printf("%r\n", "issem");
 	_printf("%S\n", "Best\nSchool");
+	_printf("String:[%s]\n", "I am a string !");
+    printf("String:[%s]\n", "I am a string !");
 	return (0);
 }

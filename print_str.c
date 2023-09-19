@@ -8,9 +8,18 @@
  */
 int print_str(char *str)
 {
-	int len;
+	int len, i;
+	char *buffer;
 
 	len = _strlen(str);
-	write(1, str, len);
+	buffer = (char *)malloc(len * sizeof(char) + 1);
+	if (buffer == NULL)
+		exit(0);;
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		buffer[i] = str[i];
+	}
+	buffer[i] = '\0';
+	write(1, buffer, len);
 	return (len);
 }
