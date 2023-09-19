@@ -11,6 +11,6 @@ int print_str(const char *str)
 	int len;
 
 	len = _strlen(str);
-	write(1, str, len);;
+	write(1, str, len);
 	return (len);
 }
