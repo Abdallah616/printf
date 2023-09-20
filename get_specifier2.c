@@ -47,7 +47,7 @@ int get2_specifier(char specifier, va_list args)
 		default:
 			write(1, &per, 1);
 			write(1, &specifier, 1);
-			printed_chars++;
+			printed_chars += 2;
 			break;
 	}
 	return (printed_chars);

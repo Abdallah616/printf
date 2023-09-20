@@ -9,7 +9,19 @@
  */
 int main(void)
 {
-	int len, len3;
+	int len, len2;
+
+	len = _printf("%!\n");
+	len2 = printf("%!\n");
+	fflush(stdout);
+	if (len != len2)
+	{
+		printf("Lengths differ.\n");
+		fflush(stdout);
+		return (1);
+	}
+	return (0);
+	/*int len, len3;
 	int len2;
 	unsigned int ui;
     void *addr;
@@ -47,5 +59,5 @@ int main(void)
 	_printf("%S\n", "Best\nSchool");
 	_printf("String:[%s]\n", "I am a string !");
     printf("String:[%s]\n", "I am a string !");
-	return (0);
+	return (0);*/
 }
