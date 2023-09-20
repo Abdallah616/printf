@@ -21,7 +21,7 @@ int print_custom_str(char *sptr)
 			hex_buff[0] = (sptr[i] / 16) + ((sptr[i] / 16 <= 9) ? '0' : 'A' - 10);
 			hex_buff[1] = (sptr[i] % 16) + ((sptr[i] % 16 <= 9) ? '0' : 'A' - 10);
 			write(1, hex_buff, 2);
-			printed_chars += 2;
+			printed_chars += 4;
 		}
 		else
 		{
