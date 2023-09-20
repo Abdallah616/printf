@@ -12,7 +12,9 @@ int print_address(void *ptr)
 	int num_len = 0, i, remainder;
 	unsigned long int temp = address;
 	char *hex_str = (char *)malloc(LOCAL_BUFFER);
-
+	
+	if (hex_str == NULL)
+		exit(0);
 	if (address == 0)
 	{
 		write(1, "(nil)", 5);
